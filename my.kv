@@ -1,0 +1,40 @@
+<MyWidget>
+    name: name #global variable name references the id name
+    address: address #global variable name references the id address
+    GridLayout:
+        cols: 1
+        size: root.width-200, root.height-200
+        pos: 100, 100
+        GridLayout:
+            cols: 2
+            Label:
+                text: "Name"
+            TextInput:
+                id: name
+                multiline: False
+            Label:
+                text: "Address"
+            TextInput:
+                id: address
+                multiline: False
+        Button:
+            text: "Submit"
+            on_press: root.btnSubmit()
+<Button>:
+    font_size: 10
+    color: 0.1, 0.5, 0.6, 1
+    size_hint: 0.5, 0.5 #width and height
+
+<FloatLayout>:
+    Button:
+        text: "Rubie"
+        pos_hint: {"x": 0.5, "bottom": 1}
+    Button:
+        id: btn
+        text: "Home" if btn.state == "normal" else "House"
+
+<Touch>:
+    btn: btn
+    Button: 
+        id: btn
+        text: "My Button"
